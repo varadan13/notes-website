@@ -2,9 +2,10 @@ import fs from "fs";
 import html from "html";
 import { marked } from "marked";
 import psl from "psl";
-import remoteJsonFeed from "./feed.json" assert { type: "json" };
+// import remoteJsonFeed from "./feed.json" assert { type: "json" };
 import jsonfeedToRSS from "jsonfeed-to-rss";
 
+const remoteJsonFeed = { items: [] };
 const normalize = fs
   .readFileSync("./node_modules/normalize.css/normalize.css")
   .toString();
@@ -345,7 +346,7 @@ function template(data) {
           border-radius: 50%;
           box-shadow: 0 0 0 10px var(--c-bg);
           background: var(--c-bg);
-          transition: .3s ease transform;
+          transition: 0.3s ease transform;
         }
         nav a:active {
           transform: scale(0.9);
